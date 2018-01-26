@@ -35,13 +35,18 @@ class Login extends Component {
   }
   logout = async (e) => {
     e.preventDefault()
-    await fetch(`http://localhost:5000/auth/logout`, {
+    const r = await fetch(`http://localhost:5000/auth/logout`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
         'Authorization': localStorage.getItem('token')
       }
+    })
+    const logged = await r.json()
+    this.setState({
+      token: logged.auth_token,
+      message: logged.message
     })
     localStorage.removeItem('token')
   }
