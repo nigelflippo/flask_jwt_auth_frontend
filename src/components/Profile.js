@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {RaisedButton} from 'material-ui'
 
 class Profile extends Component {
   constructor(props) {
@@ -43,12 +44,15 @@ class Profile extends Component {
   }
   render() {
     return (
-      <div>
-        <button onClick={this.displayUser}>Display Current User</button>
-        <div>{this.state.user_id}</div>
-        <div>{this.state.email}</div>
-        <div>{this.state.admin}</div>
-        <div>{this.state.registered_on}</div>
+      <div className="container">
+        <div className="form-field">
+
+          <RaisedButton onClick={this.displayUser} label="Display Current User" style={{margin:6}}/>
+          <div>{this.state.user_id}</div>
+          <div>{this.state.email}</div>
+          <div>{this.state.admin}</div>
+          <div>{this.state.registered_on}</div>
+        </div>
       </div>
     )
   }

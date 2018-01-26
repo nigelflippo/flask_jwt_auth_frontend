@@ -1,0 +1,19 @@
+* {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+h2 {
+  color: #212121
+}
+.container {
+  display: grid;
+  grid-template-columns: 50px 40px auto 40px 50px;
+  grid-auto-rows: auto;
+}
+.form-field {
+  grid-column: 3;
+}

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 // import {
 //   BrowserRouter as Router,
 //   Route
@@ -17,9 +19,15 @@ class App extends Component {
   render() {
     return (
         <div className="App">
-          <Login />
-          <Register />
-          <Profile />
+          <MuiThemeProvider>
+            <Login />
+          </MuiThemeProvider>
+          <MuiThemeProvider>
+            <Register />
+          </MuiThemeProvider>
+          <MuiThemeProvider>
+            <Profile />
+          </MuiThemeProvider>
         </div>
     );
   }

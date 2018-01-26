@@ -1,4 +1,8 @@
 import React, { Component } from 'react'
+import {
+  TextField,
+  RaisedButton
+} from 'material-ui'
 // import {
 //   Link
 // } from 'react-router-dom'
@@ -57,32 +61,31 @@ class Login extends Component {
   }
   render() {
     return (
-      <div>
-        <form onSubmit={(e)=>{this.loginUser(e, this.state)}}>
+      <div className="container">
+        <form className="form-field" onSubmit={(e)=>{this.loginUser(e, this.state)}}>
           <div>
-            <h3>Login</h3>
+            <h2>Login</h2>
           </div>
           <div>
             <label>Email</label>
             <div>
-              <input type="text" name="email" value={this.state.email} onChange={this.handleChange}>
-              </input>
+              <TextField type="text" name="email" value={this.state.email} onChange={this.handleChange} />
             </div>
           </div>
           <div>
             <label>Password</label>
             <div>
-              <input type="password" name="password" value={this.state.password} onChange={this.handleChange}></input>
+              <TextField type="password" name="password" value={this.state.password} onChange={this.handleChange} />
             </div>
           </div>
           <div>
-            <button type="submit" value="Send">Login</button>
+            <RaisedButton type="submit" value="Send" label="Login" style={{margin:6}}/>
           </div>
+          <div>
+            <RaisedButton onClick={(e)=>{this.logout(e)}} label="Logout" style={{margin:6}}/>
+          </div>
+          <span style={{fontSize:16, margin:6}}>{this.state.message}</span>
         </form>
-        <div>
-          <button onClick={(e)=>{this.logout(e)}}>Logout</button>
-        </div>
-        <span style={{fontSize:10}}>{this.state.message}</span>
       </div>
     )
   }

@@ -1,4 +1,8 @@
 import React, { Component } from 'react'
+import {
+  TextField,
+  RaisedButton
+} from 'material-ui'
 
 class Register extends Component {
   constructor(props) {
@@ -28,26 +32,25 @@ class Register extends Component {
   }
   render() {
     return (
-      <div>
-        <form onSubmit={()=>{this.createUser(this.state)}}>
+      <div className="container">
+        <form className="form-field" onSubmit={()=>{this.createUser(this.state)}}>
           <div>
-            <h3>Register New User</h3>
+            <h2>Register New User</h2>
           </div>
           <div>
             <label>Email</label>
             <div>
-              <input type="text" name="email" value={this.state.email} onChange={this.handleChange}>
-              </input>
+              <TextField type="text" name="email" value={this.state.email} onChange={this.handleChange}/>
             </div>
           </div>
           <div>
             <label>Password</label>
             <div>
-              <input type="password" name="password" value={this.state.password} onChange={this.handleChange}></input>
+              <TextField type="password" name="password" value={this.state.password} onChange={this.handleChange}/>
             </div>
           </div>
           <div>
-            <button type="submit" value="Send">Submit</button>
+            <RaisedButton type="submit" value="Send" label="Register" style={{margin:6}}/>
           </div>
         </form>
         <br/>
