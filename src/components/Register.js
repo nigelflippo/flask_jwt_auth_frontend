@@ -50,7 +50,7 @@ class Register extends Component {
             </div>
           </div>
           <div>
-            <RaisedButton type="submit" value="Send" label="Register" style={{margin:6}}/>
+            <RaisedButton type="submit" value="Send" label="Register" style={{margin:6}} primary={true}/>
           </div>
         </form>
         <br/>

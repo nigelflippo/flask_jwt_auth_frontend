@@ -44,7 +44,6 @@ class Login extends Component {
     }
   }
   logout = async (e) => {
-    e.preventDefault()
     const r = await fetch(`http://localhost:5000/auth/logout`, {
       method: 'POST',
       headers: {
@@ -70,7 +69,7 @@ class Login extends Component {
       <div className="container">
         <form className="form-field" onSubmit={(e)=>{this.loginUser(e, this.state)}}>
           <div>
-            <h2>Login</h2>
+            <h2 className="header">Login</h2>
           </div>
           <div>
             <label>Email</label>
@@ -85,10 +84,10 @@ class Login extends Component {
             </div>
           </div>
           <div>
-            <RaisedButton type="submit" value="Send" label="Login" style={{margin:6}}/>
+            <RaisedButton type="submit" value="Send" label="Login" style={{margin:6}} primary={true}/>
           </div>
           <div>
-            <RaisedButton onClick={(e)=>{this.logout(e)}} label="Logout" style={{margin:6}}/>
+            <RaisedButton onClick={(e)=>{this.logout(e)}} label="Logout" style={{margin:6}} primary={true}/>
           </div>
           <span style={{fontSize:16, margin:6}}>{this.state.message}</span>
         </form>

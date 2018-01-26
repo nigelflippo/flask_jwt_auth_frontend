@@ -12,9 +12,21 @@ h2 {
 }
 .container {
   display: grid;
-  grid-template-columns: 50px 40px auto 40px 50px;
+  grid-template-columns: 50px 30px auto 40px 50px;
   grid-auto-rows: auto;
 }
 .form-field {
+  display: grid;
+  grid-auto-columns: auto;
+  grid-column: 3/4;
+  justify-items: center;
+}
+.header {
+  justify-items: center;
+}
+.profile {
+  display: grid;
+  grid-auto-columns: auto;
   grid-column: 3;
+  justify-items: center;
 }

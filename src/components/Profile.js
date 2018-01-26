@@ -33,10 +33,10 @@ class Profile extends Component {
     if (json.message) {
       return {
         data: {
-          user_id: 'N/A',
-          email: 'N/A',
-          admin: 'N/A',
-          registered_on: 'N/A'
+          user_id: '',
+          email: '',
+          admin: '',
+          registered_on: ''
         }
       }
     }
@@ -46,8 +46,7 @@ class Profile extends Component {
     return (
       <div className="container">
         <div className="form-field">
-
-          <RaisedButton onClick={this.displayUser} label="Display Current User" style={{margin:6}}/>
+          <RaisedButton onClick={this.displayUser} label="Display Current User" style={{margin:6, marginLeft: 25}}/>
           <div>{this.state.user_id}</div>
           <div>{this.state.email}</div>
           <div>{this.state.admin}</div>
