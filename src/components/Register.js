@@ -31,21 +31,26 @@ class Register extends Component {
       <div>
         <form onSubmit={()=>{this.createUser(this.state)}}>
           <div>
-            <h4>Register New User</h4>
+            <h3>Register New User</h3>
           </div>
           <div>
             <label>Email</label>
-            <input type="text" name="email" value={this.state.email} onChange={this.handleChange}>
-            </input>
+            <div>
+              <input type="text" name="email" value={this.state.email} onChange={this.handleChange}>
+              </input>
+            </div>
           </div>
           <div>
             <label>Password</label>
-            <input type="password" name="password" value={this.state.password} onChange={this.handleChange}></input>
+            <div>
+              <input type="password" name="password" value={this.state.password} onChange={this.handleChange}></input>
+            </div>
           </div>
           <div>
             <button type="submit" value="Send">Submit</button>
           </div>
         </form>
+        <br/>
       </div>
     )
   }
