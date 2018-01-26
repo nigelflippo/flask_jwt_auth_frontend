@@ -31,11 +31,17 @@ class Login extends Component {
       }
     })
     const logged = await r.json()
-    this.setState({
-      token: logged.auth_token,
-      message: logged.message
-    })
-    localStorage.setItem('token', logged.auth_token)
+    if (logged.auth_token) {
+      this.setState({
+        token: logged.auth_token,
+        message: logged.message
+      })
+      localStorage.setItem('token', logged.auth_token)
+    } else {
+      this.setState({
+        message: logged.message
+      })
+    }
   }
   logout = async (e) => {
     e.preventDefault()

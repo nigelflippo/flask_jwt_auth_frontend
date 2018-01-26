@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {RaisedButton} from 'material-ui'
+import { RaisedButton } from 'material-ui'
 
 class Profile extends Component {
   constructor(props) {
